@@ -1,0 +1,31 @@
+<form>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Sign Up: </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput type="text" placeholder="email">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="text" placeholder="your name">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="password" placeholder="password">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="password" placeholder="repeat your password">
+      </mat-form-field>
+      <mat-grid-list cols="6" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let item of items">
+          <mat-icon class="avatar" [svgIcon]="item"></mat-icon>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <button mat-raised-button color="primary" type="button">Sign Up</button>
+    </mat-card-content>
+    <mat-card-actions class="text-right">
+      <p>don't have account? <a href="">sign up</a></p>
+      <p>forget password? <a href="">reset password </a></p>
+    </mat-card-actions>
+  </mat-card>
+</form>
