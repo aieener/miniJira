@@ -8,6 +8,15 @@ import {
   MatInputModule,
   MatListModule,
   MatGridListModule,
+  MatDialogModule,
+  MatAutocompleteModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatTooltipModule,
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSelectModule
 } from "@angular/material";
 
 @NgModule({
@@ -21,6 +30,15 @@ import {
     MatInputModule,
     MatListModule,
     MatGridListModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTooltipModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
   exports: [
     CommonModule,
@@ -31,6 +49,15 @@ import {
     MatInputModule,
     MatListModule,
     MatGridListModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTooltipModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ]
 })
 // shareModule basically import files and export them

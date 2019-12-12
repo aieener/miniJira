@@ -1,3 +1,15 @@
-<p>
-  new-project works!
-</p>
+<form>
+  <h2 mat-dialog-title>New Project</h2>
+  <div mat-dialog-content>
+    <mat-form-field class="full-width">
+      <input matInput type="text" placeholder="project name">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput type="text" placeholder="description">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button type="button" mat-raised-button color="primary" (click)="onClick()">save</button>
+    <button type="button" mat-button mat-dialog-close>close</button>
+  </div>
+</form>
