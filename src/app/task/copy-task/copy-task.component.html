@@ -1,12 +1,12 @@
 <form>
-    <h2 mat-dialog-title>move all tasks in the list</h2>
-    <div mat-dialog-content>
-      <mat-select placeholder="please select the target list">
-        <mat-option *ngFor="let list of lists" [value]="list">{{list.name}}</mat-option>
-      </mat-select>
-    </div>
-    <div mat-dialog-actions>
-      <button type="button" mat-raised-button color="primary" >save</button>
-      <button type="button" mat-button mat-dialog-close>close</button>
-    </div>
-  </form>
+  <h2 mat-dialog-title>move all tasks in the list</h2>
+  <div mat-dialog-content>
+    <mat-select placeholder="please select the target list">
+      <mat-option *ngFor="let list of lists" [value]="list">{{list.name}}</mat-option>
+    </mat-select>
+  </div>
+  <div mat-dialog-actions>
+    <button type="button" mat-raised-button color="primary">save</button>
+    <button type="button" mat-button mat-dialog-close>close</button>
+  </div>
+</form>
