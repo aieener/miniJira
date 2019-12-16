@@ -142,6 +142,10 @@ export class TaskHomeComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  handleQuickTask(desc: string) {
+    console.log(desc);
 
   }
 }
