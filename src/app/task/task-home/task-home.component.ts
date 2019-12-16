@@ -130,4 +130,18 @@ export class TaskHomeComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(res => console.log(res));
   }
+
+  handleMove(srcData, list) {
+    switch (srcData.tag) {
+      case 'task-item':
+        console.log('handling item')
+        break;
+      case 'task-list':
+        console.log('handing list')
+        break;
+      default:
+        break;
+    }
+
+  }
 }

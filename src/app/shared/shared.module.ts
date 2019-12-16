@@ -16,9 +16,11 @@ import {
   MatRadioModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSelectModule
+  MatSelectModule,
 } from "@angular/material";
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { DirectiveModule } from '../directive/directive.module';
+import { take } from 'rxjs/operators';
 
 @NgModule({
   declarations: [ConfirmDialogComponent],
@@ -41,6 +43,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    DirectiveModule,
   ],
   exports: [
     CommonModule,
@@ -60,7 +63,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    DirectiveModule,
   ]
 })
 // shareModule basically import files and export them
-export class SharedModule {}
+export class SharedModule { }
