@@ -1,26 +1,24 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form, $event)">
   <mat-card>
     <mat-card-header>
       <mat-card-title>Sign Up: </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <mat-form-field class="full-width">
-        <input matInput type="text" placeholder="email">
+        <input matInput type="text" placeholder="email" formControlName="email">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput type="text" placeholder="your name">
+        <input matInput type="text" placeholder="your name" formControlName="name">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput type="password" placeholder="password">
+        <input matInput type="password" placeholder="password" formControlName="password">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput type="password" placeholder="repeat your password">
+        <input matInput type="password" placeholder="repeat your password" formControlName="repeat">
       </mat-form-field>
-      <mat-grid-list cols="6" rowHeight="1:1">
-        <mat-grid-tile *ngFor="let item of items">
-          <mat-icon class="avatar" [svgIcon]="item"></mat-icon>
-        </mat-grid-tile>
-      </mat-grid-list>
+      <app-image-list-select [useSvgIcon]="true" [cols]="6" [title]="'select avatar: '" [items]="items"
+        formControlName="avatar">
+      </app-image-list-select>
       <button mat-raised-button color="primary" type="button">Sign Up</button>
     </mat-card-content>
     <mat-card-actions class="text-right">
@@ -28,4 +26,4 @@
       <p>forget password? <a href="">reset password </a></p>
     </mat-card-actions>
   </mat-card>
-</form>
+</form >
