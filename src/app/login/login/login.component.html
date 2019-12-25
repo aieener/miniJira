@@ -22,16 +22,15 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-        Renee is an Egg
+        Egg Quote
       </mat-card-title>
       <mat-card-subtitle>
-        Egg is the Best!
+        {{quote.cn}}
       </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="/assets/lifeOfPi-min.jpg" alt="tiger">
+    <img mat-card-image [src]="quote.pic" alt="quote image">
     <mat-card-content>
-      love egg love baby
-      love egg love baby
+      <p>{{quote.en}}</p>
     </mat-card-content>
   </mat-card>
 </form>

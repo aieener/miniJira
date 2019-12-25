@@ -8,16 +8,24 @@ import { MatIconRegistry } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
 import { loadSvgResource } from "../utils/svg.util";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ServicesModule } from '../services/services.module';
+import "../utils/debug.util";
+
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     HttpClientModule,
     SharedModule,
+    ServicesModule.forRoot(),
     BrowserAnimationsModule
   ],
-
-  exports: [HeaderComponent, FooterComponent, SidebarComponent]
+  exports: [HeaderComponent, FooterComponent, SidebarComponent],
+  providers: [
+    {provide: 'BASE_CONFIG', useValue: {
+      uri: 'http://localhost:3000'
+    }}
+  ]
 })
 export class CoreModule {
   constructor(
