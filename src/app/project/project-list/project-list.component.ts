@@ -1,9 +1,11 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit, Inject, ChangeDetectorRef } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { NewProjectComponent } from "../new-project/new-project.component";
 import { InviteComponent } from "../invite/invite.component";
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { Project } from 'src/app/domain';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: "app-project-list",
@@ -11,21 +13,12 @@ import { Content } from '@angular/compiler/src/render3/r3_ast';
   styleUrls: ["./project-list.component.scss"]
 })
 export class ProjectListComponent implements OnInit {
-  projects = [
-    {
-      name: "miniJIRA",
-      desc: "this is to mock miniJIRA",
-      coverImg: "assets/img/covers/0.jpg"
-    },
-    {
-      name: "auto test",
-      desc: "this is another mockProject",
-      coverImg: "assets/img/covers/1.jpg"
-    }
-  ];
-  constructor(private dialog: MatDialog) { }
+  projects: Project[];
+  constructor(private dialog: MatDialog, private cd: ChangeDetectorRef, private service$: ProjectService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.service$.get("1").subscribe(res => this.projects = res);
+  }
 
   openNewProjectDialog() {
     const dialogRef = this.dialog.open(NewProjectComponent, {
@@ -45,10 +38,12 @@ export class ProjectListComponent implements OnInit {
   }
 
   launchConfirmDialog() {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {data : {
-      title: 'Delete Project',
-      content : 'Are you sure to delete this project?'
-    }});
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: 'Delete Project',
+        content: 'Are you sure to delete this project?'
+      }
+    });
     dialogRef.afterClosed().subscribe(result => console.log(result));
   }
 }
