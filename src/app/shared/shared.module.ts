@@ -24,6 +24,7 @@ import { DirectiveModule } from '../directive/directive.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
 import { AgeInputComponent } from './age-input/age-input.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent],
@@ -50,6 +51,7 @@ import { AgeInputComponent } from './age-input/age-input.component';
     DirectiveModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
   ],
   exports: [
     CommonModule,
@@ -75,6 +77,7 @@ import { AgeInputComponent } from './age-input/age-input.component';
     ReactiveFormsModule,
     AgeInputComponent,
     ImageListSelectComponent,
+    FlexLayoutModule,
   ]
 })
 // shareModule basically import files and export them

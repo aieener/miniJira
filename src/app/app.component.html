@@ -4,11 +4,11 @@
 
     </app-sidebar>
   </mat-sidenav>
-  <div class="site">
+  <div class="site" fxLayout="column">
     <header>
       <app-header (toggle)="sidenav.toggle()" ></app-header>
     </header>
-    <main>
+    <main fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="center">
       <router-outlet></router-outlet>
     </main>
     <footer>

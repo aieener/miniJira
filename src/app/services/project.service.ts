@@ -57,4 +57,12 @@ export class ProjectService {
             headers: this.headers
         });
     }
+
+    // GET /all_project
+    getAll(): Observable<Project[]> {
+        const uri = `${this.config.uri}/${this.domain}`;
+        return this.http.get<Project[]>(uri, {
+            headers: this.headers
+        });
+    }
 }

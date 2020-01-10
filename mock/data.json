@@ -12,12 +12,24 @@
     },
     {
       "id": "2",
-      "name": "auto test",
+      "name": "auto test1111",
       "desc": "this is another mockProject",
       "coverImg": "assets/img/covers/1.jpg",
       "members": [
         "1"
       ]
+    },
+    {
+      "name": "new project",
+      "desc": "create a new project",
+      "coverImg": "/assets/img/covers/17.jpg",
+      "id": "cVL__EW"
+    },
+    {
+      "name": "auto test",
+      "desc": "this is another mockProject",
+      "coverImg": "assets/img/covers/1.jpg",
+      "id": "DUQZrF7"
     }
   ],
   "taskLists": [
