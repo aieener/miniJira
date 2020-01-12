@@ -10,6 +10,9 @@ import { loadSvgResource } from "../utils/svg.util";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ServicesModule } from '../services/services.module';
 import "../utils/debug.util";
+import { AppRoutingModule } from '../app-routing.module';
+import { AppStoreModule } from '../reducers';
+import { AppEffectsModule } from '../effects';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import "../utils/debug.util";
     HttpClientModule,
     SharedModule,
     ServicesModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppEffectsModule,
+    AppRoutingModule,
+    AppStoreModule
   ],
   exports: [HeaderComponent, FooterComponent, SidebarComponent],
   providers: [

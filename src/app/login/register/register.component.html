@@ -1,30 +1,54 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit(form, $event)">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Sign Up: </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-form-field class="full-width">
-        <input matInput type="text" placeholder="email" formControlName="email">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput type="text" placeholder="your name" formControlName="name">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput type="password" placeholder="password" formControlName="password">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput type="password" placeholder="repeat your password" formControlName="repeat">
-      </mat-form-field>
-      <app-image-list-select [useSvgIcon]="true" [cols]="6" [title]="'select avatar: '" [items]="items"
-        formControlName="avatar">
-      </app-image-list-select>
-      <app-age-input formControlName="dateOfBirth"></app-age-input>
-      <button mat-raised-button color="primary" type="button">Sign Up</button>
-    </mat-card-content>
-    <mat-card-actions class="text-right">
-      <p>don't have account? <a href="">sign up</a></p>
-      <p>forget password? <a href="">reset password </a></p>
-    </mat-card-actions>
+<form fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center stretch" [formGroup]="form" (ngSubmit)="onSubmit(form, $event)">
+  <mat-card fxFlex="1 1 auto">
+    <mat-tab-group [dynamicHeight]="true" [selectedIndex]="selectedTab" (selectChange)="onTabChange($event.index)">
+      <mat-tab label="Accnount Info">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput type="text" placeholder="name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput type="password" placeholder="password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput type="password" placeholder="repeat password" formControlName="repeat">
+        </mat-form-field>
+        <app-image-list-select
+          [useSvgIcon]="true"
+          [cols]="6"
+          [title]="'select avatar：'"
+          [items]="avatars$ | async"
+          formControlName="avatar">
+        </app-image-list-select>
+        <div class="full-width" fxLayout="row">
+          <button mat-raised-button type="button" (click)="nextTab()">next</button>
+          <span class="fill-remaining-space"></span>
+          <span>
+            <span>already signed up？ <a routerLink="/login">login</a></span>
+            <span>forgot <a routerLink="/forgot">password？</a></span>
+          </span>
+        </div>
+      </mat-tab>
+      <mat-tab label="personal info">
+        <app-indentity-input formControlName="identity" class="full-width control-padding">
+        </app-indentity-input>
+        <div class="full-width control-padding">
+          <app-age-input formControlName="dateOfBirth"></app-age-input>
+        </div>
+        <div class="full-width control-padding">
+          <app-area-list formControlName="address"></app-area-list>
+        </div>
+        <div class="full-width" fxLayout="row">
+          <button mat-raised-button type="button" (click)="prevTab()">prev step</button>
+          <button mat-raised-button type="submit" [disabled]="!form.valid">register</button>
+          <span class="fill-remaining-space"></span>
+          <span>
+            <span>already signed up？ <a routerLink="/login">login</a></span>
+            <span>forgot <a routerLink="/forgot">password？</a></span>
+          </span>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card>
-</form >
+</form>
